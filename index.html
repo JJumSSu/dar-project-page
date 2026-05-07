@@ -7,24 +7,23 @@
   <meta name="title" content="Distribution-Aware Reward">
   <meta name="description" content="Distribution-Aware Reward trains language models to produce better predictive distributions for regression rather than only optimizing point predictions.">
   <meta name="keywords" content="LLM regression, reinforcement learning, predictive distribution, uncertainty estimation, CRPS, scientific regression, rank correlation">
-  <meta name="author" content="Anonymous Authors">
+  <meta name="author" content="Distribution-Aware Reward Authors">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
 
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Anonymous Project Page">
+  <meta property="og:site_name" content="Distribution-Aware Reward Project Page">
   <meta property="og:title" content="Distribution-Aware Reward">
   <meta property="og:description" content="An on-policy RL objective that directly optimizes predictive distributions for LLM regression.">
-  <meta property="og:image" content="images/icon.png">
+  <meta property="og:image" content="static/images/dar_main_figure.png">
   <meta property="og:image:alt" content="Distribution-Aware Reward project preview">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Distribution-Aware Reward">
   <meta name="twitter:description" content="An on-policy RL objective that directly optimizes predictive distributions for LLM regression.">
-  <meta name="twitter:image" content="images/icon.png">
+  <meta name="twitter:image" content="static/images/dar_main_figure.png">
 
   <meta name="citation_title" content="Distribution-Aware Reward: Reinforcement Learning over Predictive Distributions for LLM Regression">
-  <meta name="citation_author" content="Anonymous Authors">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="NeurIPS 2026 Submission">
 
@@ -32,9 +31,6 @@
   <meta name="msapplication-TileColor" content="#b91c1c">
 
   <title>Distribution-Aware Reward | Project Page</title>
-
-  <link rel="icon" type="image/png" href="images/icon.png">
-  <link rel="apple-touch-icon" href="images/icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,21 +87,8 @@
       margin-bottom: 1rem;
     }
 
-    .anonymous-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.45rem 0.8rem;
-      border: 1px solid var(--dar-border);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.75);
-      font-size: 0.95rem;
-      color: var(--dar-muted);
-      margin-bottom: 1rem;
-    }
-
     .hero-summary {
-      max-width: 850px;
+      max-width: 880px;
       margin: 1.2rem auto 1.6rem;
       font-size: 1.1rem;
       line-height: 1.7;
@@ -131,22 +114,26 @@
       background: white;
     }
 
-    .pill-row {
+    .button.is-outline-dar:hover {
+      border-color: #cbd5e1;
+      color: #111827;
+      background: #f8fafc;
+    }
+
+    .link-row {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .link-row.primary-links {
       margin-top: 1.4rem;
     }
 
-    .pill {
-      border: 1px solid var(--dar-border);
-      background: white;
-      border-radius: 999px;
-      padding: 0.45rem 0.8rem;
-      color: #374151;
-      font-size: 0.92rem;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    .link-row.section-links {
+      margin-top: 0.9rem;
     }
 
     .section-heading {
@@ -267,28 +254,6 @@
       }
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "Distribution-Aware Reward: Reinforcement Learning over Predictive Distributions for LLM Regression",
-    "description": "Distribution-Aware Reward directly optimizes predictive distributions formed by multiple LLM samples for regression tasks.",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "Anonymous Authors"
-      }
-    ],
-    "datePublished": "2026",
-    "publisher": {
-      "@type": "Organization",
-      "name": "NeurIPS 2026 Submission"
-    },
-    "keywords": ["LLM regression", "reinforcement learning", "predictive distributions", "uncertainty estimation", "CRPS"],
-    "isAccessibleForFree": true
-  }
-  </script>
 </head>
 
 <body>
@@ -297,12 +262,6 @@
     <section class="hero hero-gradient">
       <div class="hero-body">
         <div class="container is-max-desktop has-text-centered">
-          <img src="images/icon.png" alt="DAR icon" style="width:78px;height:78px;border-radius:20px;margin-bottom:1rem;box-shadow:0 12px 28px rgba(15,23,42,0.12);">
-          <div class="anonymous-badge">
-            <span class="icon is-small"><i class="fas fa-user-secret"></i></span>
-            <span>Anonymous Submission</span>
-          </div>
-
           <h1 class="title is-1 publication-title">
             Distribution-Aware Reward:
             <br>
@@ -316,38 +275,59 @@
           </p>
 
           <div class="publication-links">
-            <span class="link-block">
-              <a href="pdfs/dar_main_figure.pdf" target="_blank" class="external-link button is-normal is-rounded is-dar">
-                <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                <span>Main Figure PDF</span>
-              </a>
-            </span>
-            <span class="link-block">
-              <a href="#method" class="external-link button is-normal is-rounded is-outline-dar">
-                <span class="icon"><i class="fas fa-project-diagram"></i></span>
-                <span>Method</span>
-              </a>
-            </span>
-            <span class="link-block">
-              <a href="#results" class="external-link button is-normal is-rounded is-outline-dar">
-                <span class="icon"><i class="fas fa-chart-line"></i></span>
-                <span>Results</span>
-              </a>
-            </span>
-            <span class="link-block">
-              <a href="#bibtex" class="external-link button is-normal is-rounded is-outline-dar">
-                <span class="icon"><i class="fas fa-quote-right"></i></span>
-                <span>BibTeX</span>
-              </a>
-            </span>
-          </div>
+            <div class="link-row primary-links">
+              <span class="link-block">
+                <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dar">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dar">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
 
-          <div class="pill-row">
-            <span class="pill">LLM Regression</span>
-            <span class="pill">On-policy RL</span>
-            <span class="pill">CRPS Reward</span>
-            <span class="pill">Uncertainty Estimation</span>
-            <span class="pill">Rank Correlation</span>
+            <div class="link-row section-links">
+              <span class="link-block">
+                <a href="#overview" class="external-link button is-normal is-rounded is-outline-dar">
+                  <span class="icon"><i class="fas fa-lightbulb"></i></span>
+                  <span>Motivation</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#abstract" class="external-link button is-normal is-rounded is-outline-dar">
+                  <span class="icon"><i class="fas fa-align-left"></i></span>
+                  <span>Abstract</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#method" class="external-link button is-normal is-rounded is-outline-dar">
+                  <span class="icon"><i class="fas fa-project-diagram"></i></span>
+                  <span>Method</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#results" class="external-link button is-normal is-rounded is-outline-dar">
+                  <span class="icon"><i class="fas fa-chart-line"></i></span>
+                  <span>Results</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#analysis" class="external-link button is-normal is-rounded is-outline-dar">
+                  <span class="icon"><i class="fas fa-search"></i></span>
+                  <span>Analysis</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#bibtex" class="external-link button is-normal is-rounded is-outline-dar">
+                  <span class="icon"><i class="fas fa-quote-right"></i></span>
+                  <span>BibTeX</span>
+                </a>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -366,7 +346,8 @@
               <h3>Pointwise reward</h3>
               <p>
                 Existing LLM regression objectives often score each decoded numeric prediction independently.
-                This can improve point estimates, but it does not ensure that sampled predictions form a calibrated distribution.
+                This can improve point estimates, but it does not ensure that sampled predictions form a calibrated
+                predictive distribution.
               </p>
             </div>
           </div>
@@ -375,19 +356,14 @@
               <h3>Distribution-aware reward</h3>
               <p>
                 DAR treats multiple rollouts as an empirical predictive distribution and rewards each rollout
-                based on how it improves distribution quality.
+                based on how it improves distribution quality, encouraging useful spread around the target.
               </p>
             </div>
           </div>
         </div>
 
         <div class="card-soft figure-card mt-5">
-          <object data="pdfs/dar_main_figure.pdf" type="application/pdf" width="100%" height="520">
-            <p>
-              Main figure PDF could not be displayed.
-              <a href="pdfs/dar_main_figure.pdf">Open the PDF directly.</a>
-            </p>
-          </object>
+          <img src="static/images/dar_main_figure.png" alt="Pointwise versus distribution-aware reward shaping" loading="lazy">
           <p class="caption has-text-centered">
             Pointwise MSE scores each rollout independently and can encourage mean-seeking behavior.
             DAR scores each rollout by its leave-one-out contribution to the full predictive distribution,
@@ -396,6 +372,7 @@
         </div>
       </div>
     </section>
+
 
     <section class="section hero is-light" id="abstract">
       <div class="container is-max-desktop">
@@ -407,24 +384,7 @@
             </div>
             <div class="content has-text-justified">
               <p>
-                Large language models can predict real-valued quantities from heterogeneous inputs such as text,
-                code, and molecular strings, but most training objectives score each decoded numeric prediction independently.
-                This can improve point estimates without ensuring calibrated predictive distributions, limiting applications
-                requiring candidate ranking or uncertainty estimation.
-              </p>
-              <p>
-                We introduce <strong>Distribution-Aware Reward</strong>, an on-policy reinforcement learning objective for
-                language model regression. Our main contribution is to train language models to produce better predictive
-                distributions for regression tasks, rather than only optimizing individual decoded outputs against scalar targets.
-                DAR treats multiple decoded samples as an empirical predictive distribution, evaluates it with the Continuous
-                Ranked Probability Score, and assigns leave-one-out credit based on each rollout's marginal contribution to
-                distribution quality.
-              </p>
-              <p>
-                Across a controlled Gaussian-mixture task, code performance prediction, and molecular property prediction
-                from SMILES strings, DAR improves over supervised fine-tuning and pointwise RL baselines, including a
-                6-point Spearman improvement on KBSS. Further analyses show that DAR mitigates rollout diversity collapse
-                and improves uncertainty diagnostics.
+                Large language models can predict real-valued quantities from heterogeneous inputs such as text, code, and molecular strings, but most training objectives score each decoded numeric prediction independently, improving point estimates without ensuring calibrated predictive distributions. We introduce <strong>Distribution-Aware Reward</strong>, an on-policy reinforcement learning objective that trains language models to produce better predictive distributions for regression tasks rather than only optimizing individual decoded outputs against scalar targets. DAR treats multiple decoded samples as an empirical predictive distribution, evaluates it with the Continuous Ranked Probability Score, and assigns leave-one-out credit based on each rollout's marginal contribution to distribution quality. Across a controlled Gaussian-mixture task, code performance prediction, and molecular property prediction from SMILES strings, DAR improves over supervised fine-tuning and pointwise RL baselines, including a 6-point Spearman improvement on KBSS, while further analyses show that it mitigates rollout diversity collapse and improves uncertainty diagnostics.
               </p>
             </div>
           </div>
@@ -482,7 +442,7 @@
       <div class="container is-max-desktop">
         <div class="section-heading">
           <div class="section-kicker">Results</div>
-          <h2 class="title is-3">Distribution-aware training improves ranking and uncertainty</h2>
+          <h2 class="title is-3">Distribution-aware training improves ranking and scientific regression</h2>
         </div>
 
         <div class="columns is-variable is-4 mb-5">
@@ -490,49 +450,61 @@
             <div class="metric-card">
               <div class="metric-value">+6</div>
               <div class="metric-label">Spearman points on KBSS</div>
-              <p class="metric-desc">DAR improves rank correlation over SFT and pointwise RL baselines for code performance prediction.</p>
+              <p class="metric-desc">
+                DAR improves rank correlation over SFT and pointwise RL baselines for code performance prediction.
+              </p>
             </div>
           </div>
           <div class="column">
             <div class="metric-card">
               <div class="metric-value">0.88</div>
               <div class="metric-label">Synthetic Spearman</div>
-              <p class="metric-desc">DAR achieves the strongest LLM-based rank correlation on the Gaussian-mixture synthetic task.</p>
+              <p class="metric-desc">
+                DAR achieves the strongest LLM-based rank correlation on the Gaussian-mixture synthetic task.
+              </p>
             </div>
           </div>
           <div class="column">
             <div class="metric-card">
               <div class="metric-value">SMILES</div>
               <div class="metric-label">MoleculeNet input only</div>
-              <p class="metric-desc">DAR remains competitive without graph or 3D molecular representations.</p>
+              <p class="metric-desc">
+                DAR remains competitive without graph or 3D molecular representations.
+              </p>
             </div>
           </div>
         </div>
 
         <div class="card-soft figure-card mb-5">
-          <img src="images/synthetic_2x2_with_ensemble_without_gp.png" alt="Synthetic Gaussian-mixture regression results" loading="lazy">
+          <img src="static/images/synthetic_2x2_with_ensemble_without_gp.png" alt="Synthetic Gaussian-mixture regression results" loading="lazy">
           <p class="caption has-text-centered">
             <strong>Synthetic Gaussian-mixture regression.</strong>
             DAR better preserves global ordering and tracks the target structure in extrapolated regions.
+            Although the neural Gaussian ensemble has a stronger task-specific inductive bias, DAR achieves the strongest
+            LLM-based Spearman correlation without assuming a parametric Gaussian form.
           </p>
         </div>
 
         <div class="columns is-variable is-5">
           <div class="column">
             <div class="card-soft figure-card">
-              <img src="images/results1.png" alt="Code performance prediction results" loading="lazy">
+              <img src="static/images/results1.png" alt="Code performance prediction results" loading="lazy">
               <p class="caption">
                 <strong>Code performance prediction.</strong>
                 DAR improves Spearman correlation and yields better runtime-based program rankings.
+                Off-the-shelf ICL and the value-head baseline both underperform, suggesting that general-purpose prompting
+                or simply attaching a regression head is not sufficient for long-context code regression without task-specific adaptation.
               </p>
             </div>
           </div>
           <div class="column">
             <div class="card-soft figure-card">
-              <img src="images/results2.png" alt="Molecular property prediction results" loading="lazy">
+              <img src="static/images/results2.png" alt="Molecular property prediction results" loading="lazy">
               <p class="caption">
                 <strong>Molecular property prediction.</strong>
-                DAR is competitive using only SMILES strings, despite not using graph or 3D molecular features.
+                DAR consistently outperforms other LLM training strategies and is competitive using only SMILES strings,
+                despite not using graph structure, curated molecular features, or 3D molecular representations used by
+                specialized chemistry models.
               </p>
             </div>
           </div>
@@ -550,29 +522,25 @@
         <div class="columns is-variable is-5">
           <div class="column">
             <div class="card-soft figure-card">
-              <img src="images/predictive_std_vs_error_1x3.png" alt="Predictive standard deviation versus prediction error" loading="lazy">
+              <img src="static/images/predictive_std_vs_error_1x3.png" alt="Predictive standard deviation versus prediction error" loading="lazy">
               <p class="caption">
                 <strong>Uncertainty diagnostics.</strong>
-                Rollout standard deviation aligns more strongly with prediction error under DAR, indicating more informative uncertainty.
+                Rollout standard deviation aligns more strongly with prediction error under DAR, indicating more informative
+                predictive uncertainty and better distribution-level calibration.
               </p>
             </div>
           </div>
 
           <div class="column">
             <div class="card-soft figure-card">
-              <img src="images/training_dynamics.jpg" alt="Training dynamics under DAR and MSE reward shaping" loading="lazy">
+              <img src="static/images/training_dynamics.jpg" alt="Training dynamics under DAR and MSE reward shaping" loading="lazy">
               <p class="caption">
                 <strong>Training dynamics.</strong>
-                DAR maintains higher bracketing rate and entropy during RL training, mitigating diversity collapse.
+                DAR maintains higher bracketing rate and entropy during RL training, suggesting that it mitigates diversity
+                collapse while keeping sampled predictions better spread around the target.
               </p>
             </div>
           </div>
-        </div>
-
-        <div class="notification is-warning is-light mt-5">
-          <strong>Path check:</strong> if your file is literally named <code>images/training_dynamics</code> with no extension,
-          change the image source above to <code>images/training_dynamics</code>. If it is a PNG, keep
-          <code>images/training_dynamics.png</code>.
         </div>
       </div>
     </section>
