@@ -169,6 +169,12 @@
       background: white;
     }
 
+    .figure-card img.narrow-figure {
+      width: 86%;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
     .caption {
       color: var(--dar-muted);
       font-size: 0.95rem;
@@ -442,7 +448,7 @@
       <div class="container is-max-desktop">
         <div class="section-heading">
           <div class="section-kicker">Results</div>
-          <h2 class="title is-3">Distribution-aware training improves ranking and scientific regression</h2>
+          <h2 class="title is-3">Distribution-aware training improves regression performance</h2>
         </div>
 
         <div class="columns is-variable is-4 mb-5">
@@ -476,7 +482,7 @@
         </div>
 
         <div class="card-soft figure-card mb-5">
-          <img src="static/images/synthetic_2x2_with_ensemble_without_gp.png" alt="Synthetic Gaussian-mixture regression results" loading="lazy">
+          <img class="narrow-figure" src="static/images/synthetic_2x2_with_ensemble_without_gp.png" alt="Synthetic Gaussian-mixture regression results" loading="lazy">
           <p class="caption has-text-centered">
             <strong>Synthetic Gaussian-mixture regression.</strong>
             DAR better preserves global ordering and tracks the target structure in extrapolated regions.
