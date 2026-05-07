@@ -3,518 +3,607 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+
+  <meta name="title" content="Distribution-Aware Reward">
+  <meta name="description" content="Distribution-Aware Reward trains language models to produce better predictive distributions for regression rather than only optimizing point predictions.">
+  <meta name="keywords" content="LLM regression, reinforcement learning, predictive distribution, uncertainty estimation, CRPS, scientific regression, rank correlation">
+  <meta name="author" content="Anonymous Authors">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
+
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="og:site_name" content="Anonymous Project Page">
+  <meta property="og:title" content="Distribution-Aware Reward">
+  <meta property="og:description" content="An on-policy RL objective that directly optimizes predictive distributions for LLM regression.">
+  <meta property="og:image" content="images/icon.png">
+  <meta property="og:image:alt" content="Distribution-Aware Reward project preview">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:title" content="Distribution-Aware Reward">
+  <meta name="twitter:description" content="An on-policy RL objective that directly optimizes predictive distributions for LLM regression.">
+  <meta name="twitter:image" content="images/icon.png">
 
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
+  <meta name="citation_title" content="Distribution-Aware Reward: Reinforcement Learning over Predictive Distributions for LLM Regression">
+  <meta name="citation_author" content="Anonymous Authors">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="NeurIPS 2026 Submission">
+
+  <meta name="theme-color" content="#b91c1c">
+  <meta name="msapplication-TileColor" content="#b91c1c">
+
+  <title>Distribution-Aware Reward | Project Page</title>
+
+  <link rel="icon" type="image/png" href="images/icon.png">
+  <link rel="apple-touch-icon" href="images/icon.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
-  <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
+
   <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
-  <!-- Fonts - Optimized loading -->
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
-  <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <style>
+    :root {
+      --dar-red: #b91c1c;
+      --dar-blue: #1d4ed8;
+      --dar-ink: #111827;
+      --dar-muted: #4b5563;
+      --dar-soft: #f8fafc;
+      --dar-border: #e5e7eb;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dar-ink);
+      background: #ffffff;
+    }
+
+    .hero-gradient {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(29, 78, 216, 0.12), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(185, 28, 28, 0.12), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-bottom: 1px solid var(--dar-border);
+    }
+
+    .publication-title {
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .anonymous-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid var(--dar-border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      font-size: 0.95rem;
+      color: var(--dar-muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero-summary {
+      max-width: 850px;
+      margin: 1.2rem auto 1.6rem;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .button.is-dar {
+      background: #111827;
+      color: white;
+      border: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .button.is-dar:hover {
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(17, 24, 39, 0.18);
+    }
+
+    .button.is-outline-dar {
+      border-color: var(--dar-border);
+      color: #111827;
+      background: white;
+    }
+
+    .pill-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.4rem;
+    }
+
+    .pill {
+      border: 1px solid var(--dar-border);
+      background: white;
+      border-radius: 999px;
+      padding: 0.45rem 0.8rem;
+      color: #374151;
+      font-size: 0.92rem;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: var(--dar-red);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-soft {
+      border: 1px solid var(--dar-border);
+      border-radius: 22px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .figure-card {
+      padding: 1rem;
+    }
+
+    .figure-card img {
+      border-radius: 14px;
+      width: 100%;
+      display: block;
+      background: white;
+    }
+
+    .caption {
+      color: var(--dar-muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+      margin-top: 0.85rem;
+    }
+
+    .method-box {
+      background: #ffffff;
+      border: 1px solid var(--dar-border);
+      border-radius: 22px;
+      padding: 1.4rem;
+      height: 100%;
+    }
+
+    .method-box h3 {
+      font-weight: 800;
+      font-size: 1.2rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .metric-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+      border: 1px solid var(--dar-border);
+      border-radius: 20px;
+      padding: 1.2rem;
+      height: 100%;
+    }
+
+    .metric-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--dar-red);
+      line-height: 1;
+      margin-bottom: 0.45rem;
+    }
+
+    .metric-label {
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .metric-desc {
+      color: var(--dar-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .formula-box {
+      background: #0f172a;
+      color: #e5e7eb;
+      border-radius: 20px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      margin: 1.2rem 0;
+    }
+
+    .formula-box mjx-container {
+      color: #ffffff;
+    }
+
+    .bibtex-box {
+      position: relative;
+      background: #0f172a;
+      color: #e5e7eb;
+      border-radius: 16px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--dar-border);
+    }
+
+    @media (max-width: 768px) {
+      .publication-title {
+        font-size: 2.2rem !important;
+      }
+      .hero-summary {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "Distribution-Aware Reward: Reinforcement Learning over Predictive Distributions for LLM Regression",
+    "description": "Distribution-Aware Reward directly optimizes predictive distributions formed by multiple LLM samples for regression tasks.",
     "author": [
       {
         "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
+        "name": "Anonymous Authors"
       }
     ],
-    "datePublished": "2024-01-01",
+    "datePublished": "2026",
     "publisher": {
       "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
+      "name": "NeurIPS 2026 Submission"
     },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
+    "keywords": ["LLM regression", "reinforcement learning", "predictive distributions", "uncertainty estimation", "CRPS"],
+    "isAccessibleForFree": true
   }
   </script>
 </head>
+
 <body>
-
-
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
+
+    <section class="hero hero-gradient">
+      <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+          <img src="images/icon.png" alt="DAR icon" style="width:78px;height:78px;border-radius:20px;margin-bottom:1rem;box-shadow:0 12px 28px rgba(15,23,42,0.12);">
+          <div class="anonymous-badge">
+            <span class="icon is-small"><i class="fas fa-user-secret"></i></span>
+            <span>Anonymous Submission</span>
+          </div>
+
+          <h1 class="title is-1 publication-title">
+            Distribution-Aware Reward:
+            <br>
+            Reinforcement Learning over Predictive Distributions for LLM Regression
+          </h1>
+
+          <p class="hero-summary">
+            We train language models for regression by improving the quality of the
+            <strong>predictive distribution</strong> formed by multiple decoded samples, rather than
+            scoring each numeric output independently.
+          </p>
+
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="pdfs/dar_main_figure.pdf" target="_blank" class="external-link button is-normal is-rounded is-dar">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Main Figure PDF</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#method" class="external-link button is-normal is-rounded is-outline-dar">
+                <span class="icon"><i class="fas fa-project-diagram"></i></span>
+                <span>Method</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#results" class="external-link button is-normal is-rounded is-outline-dar">
+                <span class="icon"><i class="fas fa-chart-line"></i></span>
+                <span>Results</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#bibtex" class="external-link button is-normal is-rounded is-outline-dar">
+                <span class="icon"><i class="fas fa-quote-right"></i></span>
+                <span>BibTeX</span>
+              </a>
+            </span>
+          </div>
+
+          <div class="pill-row">
+            <span class="pill">LLM Regression</span>
+            <span class="pill">On-policy RL</span>
+            <span class="pill">CRPS Reward</span>
+            <span class="pill">Uncertainty Estimation</span>
+            <span class="pill">Rank Correlation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container is-max-desktop">
+        <div class="section-heading">
+          <div class="section-kicker">Motivation</div>
+          <h2 class="title is-3">From point predictions to predictive distributions</h2>
+        </div>
+
+        <div class="columns is-variable is-6">
+          <div class="column">
+            <div class="method-box">
+              <h3>Pointwise reward</h3>
+              <p>
+                Existing LLM regression objectives often score each decoded numeric prediction independently.
+                This can improve point estimates, but it does not ensure that sampled predictions form a calibrated distribution.
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="method-box">
+              <h3>Distribution-aware reward</h3>
+              <p>
+                DAR treats multiple rollouts as an empirical predictive distribution and rewards each rollout
+                based on how it improves distribution quality.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-soft figure-card mt-5">
+          <object data="pdfs/dar_main_figure.pdf" type="application/pdf" width="100%" height="520">
+            <p>
+              Main figure PDF could not be displayed.
+              <a href="pdfs/dar_main_figure.pdf">Open the PDF directly.</a>
+            </p>
+          </object>
+          <p class="caption has-text-centered">
+            Pointwise MSE scores each rollout independently and can encourage mean-seeking behavior.
+            DAR scores each rollout by its leave-one-out contribution to the full predictive distribution,
+            rewarding both accuracy and useful spread around the ground truth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="abstract">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+          <div class="column is-four-fifths">
+            <div class="section-heading">
+              <div class="section-kicker">Abstract</div>
+              <h2 class="title is-3">Reliable numerical prediction with LLMs</h2>
+            </div>
+            <div class="content has-text-justified">
+              <p>
+                Large language models can predict real-valued quantities from heterogeneous inputs such as text,
+                code, and molecular strings, but most training objectives score each decoded numeric prediction independently.
+                This can improve point estimates without ensuring calibrated predictive distributions, limiting applications
+                requiring candidate ranking or uncertainty estimation.
+              </p>
+              <p>
+                We introduce <strong>Distribution-Aware Reward</strong>, an on-policy reinforcement learning objective for
+                language model regression. Our main contribution is to train language models to produce better predictive
+                distributions for regression tasks, rather than only optimizing individual decoded outputs against scalar targets.
+                DAR treats multiple decoded samples as an empirical predictive distribution, evaluates it with the Continuous
+                Ranked Probability Score, and assigns leave-one-out credit based on each rollout's marginal contribution to
+                distribution quality.
+              </p>
+              <p>
+                Across a controlled Gaussian-mixture task, code performance prediction, and molecular property prediction
+                from SMILES strings, DAR improves over supervised fine-tuning and pointwise RL baselines, including a
+                6-point Spearman improvement on KBSS. Further analyses show that DAR mitigates rollout diversity collapse
+                and improves uncertainty diagnostics.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <section class="section" id="method">
+      <div class="container is-max-desktop">
+        <div class="section-heading">
+          <div class="section-kicker">Method</div>
+          <h2 class="title is-3">CRPS with leave-one-out credit assignment</h2>
+        </div>
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
+        <div class="content">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            For each input $x_i$, the model samples $K$ decoded numeric predictions
+            $\{p_{ik}\}_{k=1}^{K}$, which define an empirical predictive distribution $F_i$.
+            DAR evaluates this distribution using the negated empirical CRPS:
+          </p>
+
+          <div class="formula-box">
+            $$
+            S_i =
+            -\mathrm{CRPS}(F_i, y_i)
+            =
+            -\frac{1}{K}\sum_{k=1}^{K}|p_{ik}-y_i|
+            +
+            \frac{1}{2K^2}\sum_{k=1}^{K}\sum_{\ell=1}^{K}|p_{ik}-p_{i\ell}|.
+            $$
+          </div>
+
+          <p>
+            Since on-policy RL requires a rollout-level reward, DAR assigns credit to each rollout by
+            measuring how much it changes the distribution-level score:
+          </p>
+
+          <div class="formula-box">
+            $$
+            R^{\mathrm{DAR}}_{ik}
+            =
+            S_i - S_i^{(-k)}.
+            $$
+          </div>
+
+          <p>
+            A rollout receives positive reward when removing it worsens the predictive distribution, and negative reward
+            when it is harmful or redundant. This encourages rollout sets that are well-centered and appropriately dispersed.
           </p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    </section>
 
+    <section class="section hero is-light" id="results">
+      <div class="container is-max-desktop">
+        <div class="section-heading">
+          <div class="section-kicker">Results</div>
+          <h2 class="title is-3">Distribution-aware training improves ranking and uncertainty</h2>
+        </div>
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+        <div class="columns is-variable is-4 mb-5">
+          <div class="column">
+            <div class="metric-card">
+              <div class="metric-value">+6</div>
+              <div class="metric-label">Spearman points on KBSS</div>
+              <p class="metric-desc">DAR improves rank correlation over SFT and pointwise RL baselines for code performance prediction.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="metric-card">
+              <div class="metric-value">0.88</div>
+              <div class="metric-label">Synthetic Spearman</div>
+              <p class="metric-desc">DAR achieves the strongest LLM-based rank correlation on the Gaussian-mixture synthetic task.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="metric-card">
+              <div class="metric-value">SMILES</div>
+              <div class="metric-label">MoleculeNet input only</div>
+              <p class="metric-desc">DAR remains competitive without graph or 3D molecular representations.</p>
+            </div>
+          </div>
+        </div>
 
+        <div class="card-soft figure-card mb-5">
+          <img src="images/synthetic_2x2_with_ensemble_without_gp.png" alt="Synthetic Gaussian-mixture regression results" loading="lazy">
+          <p class="caption has-text-centered">
+            <strong>Synthetic Gaussian-mixture regression.</strong>
+            DAR better preserves global ordering and tracks the target structure in extrapolated regions.
+          </p>
+        </div>
 
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="columns is-variable is-5">
+          <div class="column">
+            <div class="card-soft figure-card">
+              <img src="images/results1.png" alt="Code performance prediction results" loading="lazy">
+              <p class="caption">
+                <strong>Code performance prediction.</strong>
+                DAR improves Spearman correlation and yields better runtime-based program rankings.
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card-soft figure-card">
+              <img src="images/results2.png" alt="Molecular property prediction results" loading="lazy">
+              <p class="caption">
+                <strong>Molecular property prediction.</strong>
+                DAR is competitive using only SMILES strings, despite not using graph or 3D molecular features.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
+    </section>
 
+    <section class="section" id="analysis">
+      <div class="container is-max-desktop">
+        <div class="section-heading">
+          <div class="section-kicker">Analysis</div>
+          <h2 class="title is-3">Better rollout dispersion and uncertainty diagnostics</h2>
+        </div>
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
+        <div class="columns is-variable is-5">
+          <div class="column">
+            <div class="card-soft figure-card">
+              <img src="images/predictive_std_vs_error_1x3.png" alt="Predictive standard deviation versus prediction error" loading="lazy">
+              <p class="caption">
+                <strong>Uncertainty diagnostics.</strong>
+                Rollout standard deviation aligns more strongly with prediction error under DAR, indicating more informative uncertainty.
+              </p>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card-soft figure-card">
+              <img src="images/training_dynamics.jpg" alt="Training dynamics under DAR and MSE reward shaping" loading="lazy">
+              <p class="caption">
+                <strong>Training dynamics.</strong>
+                DAR maintains higher bracketing rate and entropy during RL training, mitigating diversity collapse.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+
+        <div class="notification is-warning is-light mt-5">
+          <strong>Path check:</strong> if your file is literally named <code>images/training_dynamics</code> with no extension,
+          change the image source above to <code>images/training_dynamics</code>. If it is a PNG, keep
+          <code>images/training_dynamics.png</code>.
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
+    </section>
 
+    <section class="section hero is-light" id="bibtex">
+      <div class="container is-max-desktop content">
+        <div class="section-heading">
+          <div class="section-kicker">Citation</div>
+          <h2 class="title is-3">BibTeX</h2>
+        </div>
 
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+        <pre class="bibtex-box"><code>@misc{anonymous2026distributionaware,
+  title        = {Distribution-Aware Reward: Reinforcement Learning over Predictive Distributions for LLM Regression},
+  author       = {Anonymous Authors},
+  year         = {2026},
+  note         = {Anonymous submission}
 }</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <p>
+          This page was built using the
+          <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
+          adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+        </p>
       </div>
     </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+  </footer>
+</body>
+</html>
